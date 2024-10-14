@@ -1,0 +1,22 @@
+start the project by initailizing the commnad : npm init -y
+
+now install neccessary packages : npm install express sequelize body-parser mysql2 sequelize-cli 
+
+run commnad to create models,config, seeders,migrations automatically : npx sequelize init
+
+lets create db 
+    commnad:npx sequelize db:create
+
+    in config.json file make connection with database
+    lets create table User, Student, Book
+
+    Users model:
+    npx sequelize model:generate --name users --attributes name:string,email:string,mobile_no:integer,password:string,status:integer 
+    Student model:
+    npx sequelize model:generate --name students --attributes name:string,email:string,mobile_no:integer,branch:string,rollno:integer,PRN:string,status:integer
+    Book model : 
+    npx sequelize model:generate --name books --attributes book_id:integer,title:string,author:string,publiction:string,ISBN:string,price:integer  
+    Issued book recored model :
+    npx sequelize model:generate --name issued_books_records --attributes student_id:integer,book_id:integer,issued_date:date,expected_return_date:date,actual_return_date:date,penulty:integer,status:integer
+    
+
